@@ -49,7 +49,7 @@ def ativacao(resultado):
 # treinamento do perceptron
 for epoca in range(1, epocas + 1):
     print(f"\nÉPOCA {epoca}")
-    print("-" * 35)
+    print("=-=" * 11)
 
     # soma ponderada
     resultado = x1 * w1 + x2 * w2
@@ -80,7 +80,7 @@ for epoca in range(1, epocas + 1):
     print(f"erro: {erro}")
     print(Fore.GREEN + f"novo w1: {w1}" )
     print(f"novo w2: {w2}" + Style.RESET_ALL)
-    print("-" * 40)
+    print("=-=" * 11)
     time.sleep(1)
 
 
