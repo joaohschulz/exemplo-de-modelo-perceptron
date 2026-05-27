@@ -2,11 +2,15 @@ from colorama import Fore, Style
 import time
 # Tabela verdade AND -- resultados esperados do codigo
 
+
 resultados_esperados = [
     [0, 0, 0],
     [0, 1, 0],
     [1, 0, 0],
     [1, 1, 1]
+
+    # não usado diretamente no código, ta aqui apenas pra saber como é a tabela and na sequencia abaixo
+    # x1 | x2 | alvo
 ]
 
 # funcao pra definir o alvo
@@ -31,7 +35,7 @@ lr = 0.1
 
 # quantidade de épocas
 
-epocas = 10
+epocas = 5
 
 
 # função de ativação
@@ -49,15 +53,25 @@ for epoca in range(1, epocas + 1):
 
     # soma ponderada
     resultado = x1 * w1 + x2 * w2
+
+
     # validação através da função de ativação
-    saida = ativacao(resultado)
+    saida = ativacao(resultado) # - > recebe o resultado e passa pela função atiavacao que passa pelo "if"
+
+
     # erro = alvo - saída
     erro = alvo - saida
+
+
     # atualização dos pesos
     # fórmula:
     # w(m + 1) = w + lr * entrada * erro
     w1 = w1 + lr * x1 * erro
     w2 = w2 + lr * x2 * erro
+
+
+
+
     print(f"x1: {x1}")
     print(f"x2: {x2}")
     print(f"alvo: {alvo}")
